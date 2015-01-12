@@ -2,7 +2,7 @@ Description:
     Creates a new AngularJS decorator for a specified service
 
 Example:
-    yo angular-ui-router:decorator serviceName [--coffee]
+    yo angular-closure:decorator serviceName [--coffee]
 
     This will create:
         app/scripts/decorators/serviceNameDecorator.js

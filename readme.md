@@ -1,18 +1,15 @@
 # AngularJS generator (add ui-router plugin)
 
-This project fork from :yeoman / generator-angular
-I add 'ui-router' plugin in this module.
+This project fork from :iamblue / generator-angular-ui-router
 
-Maintainer: [iamblue](https://github.com/iamblue)
-
-Based on [angular-seed](https://github.com/angular/angular-seed/)
+Maintainer: [m2nd](https://github.com/m2nd)
 
 
 ## Usage
 
-Install `generator-angular-ui-router`:
+Install `generator-angular-closure`:
 ```
-npm install -g generator-angular-ui-router
+npm install -g generator-angular-closure
 ```
 
 Make a new directory, and `cd` into it:
@@ -20,9 +17,9 @@ Make a new directory, and `cd` into it:
 mkdir my-new-project && cd $_
 ```
 
-Run `yo angular-ui-router`, optionally passing an app name:
+Run `yo angular-closure`, optionally passing an app name:
 ```
-yo angular-ui-router [app-name]
+yo angular-closure [app-name]
 ```
 
 Optionally using Sass:
@@ -37,18 +34,18 @@ Optionally using Sass:
 
 Available generators:
 
-* [angular-ui-router](#app) (aka [angular-ui-router:app](#app))
-* [angular-ui-router:controller](#controller)
-* [angular-ui-router:directive](#directive)
-* [angular-ui-router:filter](#filter)
-* [angular-ui-router:route](#route)
-* [angular-ui-router:service](#service)
-* [angular-ui-router:provider](#service)
-* [angular-ui-router:factory](#service)
-* [angular-ui-router:value](#service)
-* [angular-ui-router:constant](#service)
-* [angular-ui-router:decorator] (#decorator)
-* [angular-ui-router:view](#view)
+* [angular-closure](#app) (aka [angular-closure:app](#app))
+* [angular-closure:controller](#controller)
+* [angular-closure:directive](#directive)
+* [angular-closure:filter](#filter)
+* [angular-closure:route](#route)
+* [angular-closure:service](#service)
+* [angular-closure:provider](#service)
+* [angular-closure:factory](#service)
+* [angular-closure:value](#service)
+* [angular-closure:constant](#service)
+* [angular-closure:decorator] (#decorator)
+* [angular-closure:view](#view)
 
 **Note: Generators are to be run from the root directory of your app.**
 
@@ -57,7 +54,7 @@ Sets up a new AngularJS app, generating all the boilerplate you need to get star
 
 Example:
 ```bash
-yo angular-ui-router
+yo angular-closure
 ```
 
 ### Route
@@ -65,7 +62,7 @@ Generates a controller and view, and configures a route in `app/scripts/app.js` 
 
 Example:
 ```bash
-yo angular-ui-router:route myroute
+yo angular-closure:route myroute
 ```
 
 Produces `app/scripts/controllers/myroute.js`:
@@ -85,7 +82,7 @@ Generates a controller in `app/scripts/controllers`.
 
 Example:
 ```bash
-yo angular-ui-router:controller user
+yo angular-closure:controller user
 ```
 
 Produces `app/scripts/controllers/user.js`:
@@ -99,7 +96,7 @@ Generates a directive in `app/scripts/directives`.
 
 Example:
 ```bash
-yo angular-ui-router:directive myDirective
+yo angular-closure:directive myDirective
 ```
 
 Produces `app/scripts/directives/myDirective.js`:
@@ -120,7 +117,7 @@ Generates a filter in `app/scripts/filters`.
 
 Example:
 ```bash
-yo angular-ui-router:filter myFilter
+yo angular-closure:filter myFilter
 ```
 
 Produces `app/scripts/filters/myFilter.js`:
@@ -137,7 +134,7 @@ Generates an HTML view file in `app/views`.
 
 Example:
 ```bash
-yo angular-ui-router:view user
+yo angular-closure:view user
 ```
 
 Produces `app/views/user.html`:
@@ -150,7 +147,7 @@ Generates an AngularJS service.
 
 Example:
 ```bash
-yo angular-ui-router:service myService
+yo angular-closure:service myService
 ```
 
 Produces `app/scripts/services/myService.js`:
@@ -160,14 +157,14 @@ angular.module('myMod').service('myService', function () {
 });
 ```
 
-You can also do `yo angular-ui-router:factory`, `yo angular-ui-router:provider`, `yo angular-ui-router:value`, and `yo angular-ui-router:constant` for other types of services.
+You can also do `yo angular-closure:factory`, `yo angular-closure:provider`, `yo angular-closure:value`, and `yo angular-closure:constant` for other types of services.
 
 ### Decorator
 Generates an AngularJS service decorator.
 
 Example:
 ```bash
-yo angular-ui-router:decorator serviceName
+yo angular-closure:decorator serviceName
 ```
 
 Produces `app/scripts/decorators/serviceNameDecorator.js`:
@@ -188,7 +185,7 @@ For generators that output scripts, the `--coffee` option will output CoffeeScri
 
 For example:
 ```bash
-yo angular-ui-router:controller user --coffee
+yo angular-closure:controller user --coffee
 ```
 
 Produces `app/scripts/controller/user.coffee`:
@@ -204,7 +201,7 @@ By default, generators produce unannotated code. Without annotations, AngularJS'
 
 #### Example
 ```bash
-yo angular-ui-router:controller user --minsafe
+yo angular-closure:controller user --minsafe
 ```
 
 Produces `app/controller/user.js`:
@@ -250,7 +247,7 @@ The following additional modules are available as components on bower, and insta
 * angular-loader
 * angular-resource
 * angular-sanitize
-* angular-ui-router
+* angular-closure
 
 All of these can be updated with `bower update` as new versions of AngularJS are released.
 

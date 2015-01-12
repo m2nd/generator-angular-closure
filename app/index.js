@@ -40,15 +40,15 @@ var Generator = module.exports = function Generator(args, options) {
     args.push('--minsafe');
   }
 
-  this.hookFor('angular-ui-router:common', {
+  this.hookFor('angular-closure:common', {
     args: args
   });
 
-  this.hookFor('angular-ui-router:main', {
+  this.hookFor('angular-closure:main', {
     args: args
   });
 
-  this.hookFor('angular-ui-router:controller', {
+  this.hookFor('angular-closure:controller', {
     args: args
   });
 
@@ -148,7 +148,7 @@ Generator.prototype.askForModules = function askForModules() {
       checked: true
     }, {
       value: 'uirouterModule',
-      name: 'angular-ui-router.js',
+      name: 'angular-closure.js',
       checked: true
     }]
   }];
@@ -275,7 +275,7 @@ Generator.prototype.extraModules = function extraModules() {
   }
 
   if (this.uirouterModule) {
-    modules.push('bower_components/angular-ui-router/release/angular-ui-router.js');
+    modules.push('bower_components/angular-closure/release/angular-closure.js');
   }
 
   if (modules.length) {
