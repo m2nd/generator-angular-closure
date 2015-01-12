@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="generator-angular-closure : Fork of iamblue/generator-angular-ui-router / yeoman/generator-angular with Closure managed modules and javascript compilation.">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>generator-angular-closure</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/m2nd/generator-angular-ui-router">View on GitHub</a>
+
+          <h1 id="project_title">generator-angular-closure</h1>
+          <h2 id="project_tagline">Fork of iamblue/generator-angular-ui-router / yeoman/generator-angular with Closure managed modules and javascript compilation.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/m2nd/generator-angular-ui-router/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/m2nd/generator-angular-ui-router/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="angularjs-generator-with-ui-router-plugin-and-closure-compilations--module-definitions" class="anchor" href="#angularjs-generator-with-ui-router-plugin-and-closure-compilations--module-definitions" aria-hidden="true"><span class="octicon octicon-link"></span></a>AngularJS generator with ui-router plugin and Closure compilations + module definitions.</h1>
+
+<p>This project fork from : iamblue/generator-angular-ui-router
+I add 'ui-router' plugin in this module.</p>
+
+<p>Maintainer: <a href="https://github.com/m2nd">m2nd</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Install <code>generator-angular-closure</code>:</p>
+
+<pre><code>npm install -g generator-angular-closure
+</code></pre>
+
+<p>Make a new directory, and <code>cd</code> into it:</p>
+
+<pre><code>mkdir my-new-project &amp;&amp; cd $_
+</code></pre>
+
+<p>Run <code>yo generator-angular-closure</code>, optionally passing an app name:</p>
+
+<pre><code>yo angular-closure [app-name]
+</code></pre>
+
+<p>Optionally using Sass:</p>
+
+<pre><code>[?] Would you like to use Sass with the Compass CSS Authoring Framework? Yes
+[?] Which syntax do you prefer? (Use arrow keys)
+❯ sass 
+  scss 
+</code></pre>
+
+<h2>
+<a id="generators" class="anchor" href="#generators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Generators</h2>
+
+<p>Available generators:</p>
+
+<ul>
+<li>
+<a href="#app">angular-closure</a> (aka <a href="#app">angular-closure:app</a>)</li>
+<li><a href="#controller">angular-closure:controller</a></li>
+<li><a href="#directive">angular-closure:directive</a></li>
+<li><a href="#filter">angular-closure:filter</a></li>
+<li><a href="#route">angular-closure:route</a></li>
+<li><a href="#service">angular-closure:service</a></li>
+<li><a href="#service">angular-closure:provider</a></li>
+<li><a href="#service">angular-closure:factory</a></li>
+<li><a href="#service">angular-closure:value</a></li>
+<li><a href="#service">angular-closure:constant</a></li>
+<li><a href="#decorator">angular-closure:decorator</a></li>
+<li><a href="#view">angular-closure:view</a></li>
+</ul>
+
+<p><strong>Note: Generators are to be run from the root directory of your app.</strong></p>
+
+<h3>
+<a id="app" class="anchor" href="#app" aria-hidden="true"><span class="octicon octicon-link"></span></a>App</h3>
+
+<p>Sets up a new AngularJS app, generating all the boilerplate you need to get started. The app generator also optionally installs Twitter Bootstrap and additional AngularJS modules, such as angular-resource.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure</pre></div>
+
+<h3>
+<a id="route" class="anchor" href="#route" aria-hidden="true"><span class="octicon octicon-link"></span></a>Route</h3>
+
+<p>Generates a controller and view, and configures a route in <code>app/scripts/app.js</code> connecting them.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:route myroute</pre></div>
+
+<p>Produces <code>app/scripts/controllers/myroute.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).controller(<span class="pl-s1"><span class="pl-pds">'</span>MyrouteCtrl<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$scope</span>) {
+  <span class="pl-c">// ...</span>
+});</pre></div>
+
+<p>Produces <code>app/views/myroute.html</code>:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">p</span>&gt;This is the myroute view&lt;/<span class="pl-ent">p</span>&gt;</pre></div>
+
+<h3>
+<a id="controller" class="anchor" href="#controller" aria-hidden="true"><span class="octicon octicon-link"></span></a>Controller</h3>
+
+<p>Generates a controller in <code>app/scripts/controllers</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:controller user</pre></div>
+
+<p>Produces <code>app/scripts/controllers/user.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).controller(<span class="pl-s1"><span class="pl-pds">'</span>UserCtrl<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$scope</span>) {
+  <span class="pl-c">// ...</span>
+});</pre></div>
+
+<h3>
+<a id="directive" class="anchor" href="#directive" aria-hidden="true"><span class="octicon octicon-link"></span></a>Directive</h3>
+
+<p>Generates a directive in <code>app/scripts/directives</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:directive myDirective</pre></div>
+
+<p>Produces <code>app/scripts/directives/myDirective.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).directive(<span class="pl-s1"><span class="pl-pds">'</span>myDirective<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> () {
+  <span class="pl-k">return</span> {
+    template<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>&lt;div&gt;&lt;/div&gt;<span class="pl-pds">'</span></span>,
+    restrict<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>E<span class="pl-pds">'</span></span>,
+    link<span class="pl-k">:</span> <span class="pl-st">function</span> <span class="pl-en">postLink</span>(<span class="pl-vpf">scope</span>, <span class="pl-vpf">element</span>, <span class="pl-vpf">attrs</span>) {
+      element.<span class="pl-sc">text</span>(<span class="pl-s1"><span class="pl-pds">'</span>this is the myDirective directive<span class="pl-pds">'</span></span>);
+    }
+  };
+});</pre></div>
+
+<h3>
+<a id="filter" class="anchor" href="#filter" aria-hidden="true"><span class="octicon octicon-link"></span></a>Filter</h3>
+
+<p>Generates a filter in <code>app/scripts/filters</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:filter myFilter</pre></div>
+
+<p>Produces <code>app/scripts/filters/myFilter.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).filter(<span class="pl-s1"><span class="pl-pds">'</span>myFilter<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> () {
+  <span class="pl-k">return</span> <span class="pl-st">function</span> (<span class="pl-vpf">input</span>) {
+    <span class="pl-k">return</span> <span class="pl-s1"><span class="pl-pds">'</span>myFilter filter:<span class="pl-pds">'</span></span> <span class="pl-k">+</span> input;
+  };
+});</pre></div>
+
+<h3>
+<a id="view" class="anchor" href="#view" aria-hidden="true"><span class="octicon octicon-link"></span></a>View</h3>
+
+<p>Generates an HTML view file in <code>app/views</code>.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:view user</pre></div>
+
+<p>Produces <code>app/views/user.html</code>:</p>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">p</span>&gt;This is the user view&lt;/<span class="pl-ent">p</span>&gt;</pre></div>
+
+<h3>
+<a id="service" class="anchor" href="#service" aria-hidden="true"><span class="octicon octicon-link"></span></a>Service</h3>
+
+<p>Generates an AngularJS service.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:service myService</pre></div>
+
+<p>Produces <code>app/scripts/services/myService.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).service(<span class="pl-s1"><span class="pl-pds">'</span>myService<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> () {
+  <span class="pl-c">// ...</span>
+});</pre></div>
+
+<p>You can also do <code>yo angular-ui-router:factory</code>, <code>yo angular-ui-router:provider</code>, <code>yo angular-ui-router:value</code>, and <code>yo angular-ui-router:constant</code> for other types of services.</p>
+
+<h3>
+<a id="decorator" class="anchor" href="#decorator" aria-hidden="true"><span class="octicon octicon-link"></span></a>Decorator</h3>
+
+<p>Generates an AngularJS service decorator.</p>
+
+<p>Example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:decorator serviceName</pre></div>
+
+<p>Produces <code>app/scripts/decorators/serviceNameDecorator.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).config(<span class="pl-st">function</span> (<span class="pl-vpf">$provide</span>) {
+    $provide.decorator(<span class="pl-s1"><span class="pl-pds">'</span>serviceName<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$delegate</span>) {
+      <span class="pl-c">// ...</span>
+      <span class="pl-k">return</span> $delegate;
+    });
+  });</pre></div>
+
+<h2>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>In general, these options can be applied to any generator, though they only affect generators that produce scripts.</p>
+
+<h3>
+<a id="coffeescript" class="anchor" href="#coffeescript" aria-hidden="true"><span class="octicon octicon-link"></span></a>CoffeeScript</h3>
+
+<p>For generators that output scripts, the <code>--coffee</code> option will output CoffeeScript instead of JavaScript.</p>
+
+<p>For example:</p>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:controller user --coffee</pre></div>
+
+<p>Produces <code>app/scripts/controller/user.coffee</code>:</p>
+
+<div class="highlight highlight-coffeescript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>)
+  .controller <span class="pl-s1"><span class="pl-pds">'</span>UserCtrl<span class="pl-pds">'</span></span>, <span class="pl-vpf">($scope)</span> <span class="pl-st">-&gt;</span></pre></div>
+
+<p>A project can mix CoffeScript and JavaScript files.</p>
+
+<h3>
+<a id="minification-safe" class="anchor" href="#minification-safe" aria-hidden="true"><span class="octicon octicon-link"></span></a>Minification Safe</h3>
+
+<p>By default, generators produce unannotated code. Without annotations, AngularJS's DI system will break when minified. Typically, these annotations that make minification safe are added automatically at build-time, after application files are concatenated, but before they are minified. By providing the <code>--minsafe</code> option, the code generated will out-of-the-box be ready for minification. The trade-off is between amount of boilerplate, and build process complexity.</p>
+
+<h4>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h4>
+
+<div class="highlight highlight-bash"><pre>yo angular-closure:controller user --minsafe</pre></div>
+
+<p>Produces <code>app/controller/user.js</code>:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).controller(<span class="pl-s1"><span class="pl-pds">'</span>UserCtrl<span class="pl-pds">'</span></span>, [<span class="pl-s1"><span class="pl-pds">'</span>$scope<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$scope</span>) {
+  <span class="pl-c">// ...</span>
+}]);</pre></div>
+
+<h4>
+<a id="background" class="anchor" href="#background" aria-hidden="true"><span class="octicon octicon-link"></span></a>Background</h4>
+
+<p>Unannotated:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).controller(<span class="pl-s1"><span class="pl-pds">'</span>MyCtrl<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$scope</span>, <span class="pl-vpf">$http</span>, <span class="pl-vpf">myService</span>) {
+  <span class="pl-c">// ...</span>
+});</pre></div>
+
+<p>Annotated:</p>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s1"><span class="pl-pds">'</span>myMod<span class="pl-pds">'</span></span>).controller(<span class="pl-s1"><span class="pl-pds">'</span>MyCtrl<span class="pl-pds">'</span></span>,
+  [<span class="pl-s1"><span class="pl-pds">'</span>$scope<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>$http<span class="pl-pds">'</span></span>, <span class="pl-s1"><span class="pl-pds">'</span>myService<span class="pl-pds">'</span></span>, <span class="pl-st">function</span> (<span class="pl-vpf">$scope</span>, <span class="pl-vpf">$http</span>, <span class="pl-vpf">myService</span>) {
+
+    <span class="pl-c">// ...</span>
+  }]);</pre></div>
+
+<p>The annotations are important because minified code will rename variables, making it impossible for AngularJS to infer module names based solely on function parameters.</p>
+
+<p>The recommended build process uses <code>ngmin</code>, a tool that automatically adds these annotations. However, if you'd rather not use <code>ngmin</code>, you have to add these annotations manually yourself.</p>
+
+<h2>
+<a id="bower-components" class="anchor" href="#bower-components" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bower Components</h2>
+
+<p>The following packages are always installed by the <a href="#app">app</a> generator:</p>
+
+<ul>
+<li>angular</li>
+<li>angular-mocks</li>
+<li>angular-scenario</li>
+</ul>
+
+<p>The following additional modules are available as components on bower, and installable via <code>bower install</code>:</p>
+
+<ul>
+<li>angular-cookies</li>
+<li>angular-loader</li>
+<li>angular-resource</li>
+<li>angular-sanitize</li>
+<li>angular-ui-router</li>
+</ul>
+
+<p>All of these can be updated with <code>bower update</code> as new versions of AngularJS are released.</p>
+
+<h2>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configuration</h2>
+
+<p>Yeoman generated projects can be further tweaked according to your needs by modifying project files appropriately.</p>
+
+<h3>
+<a id="output" class="anchor" href="#output" aria-hidden="true"><span class="octicon octicon-link"></span></a>Output</h3>
+
+<p>You can change the <code>app</code> directory by adding a <code>appPath</code> property to <code>bower.json</code>. For instance, if you wanted to easily integrate with Express.js, you could add the following:</p>
+
+<div class="highlight highlight-json"><pre>{
+  <span class="pl-s1"><span class="pl-pds">"</span>name<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>yo-testt<span class="pl-pds">"</span></span>,
+  <span class="pl-s1"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>0.0.0<span class="pl-pds">"</span></span>,
+  <span class="pl-ii">...</span>
+  <span class="pl-s1"><span class="pl-pds">"</span>appPath<span class="pl-pds">"</span></span>: <span class="pl-s1"><span class="pl-pds">"</span>public<span class="pl-pds">"</span></span>
+}
+</pre></div>
+
+<p>This will cause Yeoman-generated client-side files to be placed in <code>public</code>.</p>
+
+<h2>
+<a id="testing" class="anchor" href="#testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>For tests to work properly, karma needs the <code>angular-mocks</code> bower package.
+This script is included in the bower.json in the <code>devDependencies</code> section, which will
+be available very soon, probably with the next minor release of bower.</p>
+
+<p>While bower <code>devDependencies</code> are not yet implemented, you can fix it by running:</p>
+
+<div class="highlight highlight-bash"><pre>bower install angular-mocks</pre></div>
+
+<p>By running <code>grunt test</code> you should now be able to run your unit tests with karma.</p>
+
+<h2>
+<a id="contribute" class="anchor" href="#contribute" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contribute</h2>
+
+<p>See the <a href="https://github.com/yeoman/yeoman/blob/master/contributing.md">contributing docs</a></p>
+
+<p>When submitting an issue, please follow the <a href="https://github.com/yeoman/yeoman/blob/master/contributing.md#issue-submission">guidelines</a>. Especially important is to make sure Yeoman is up-to-date, and providing the command or commands that cause the issue.</p>
+
+<p>When submitting a PR, make sure that the commit messages match the <a href="https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/">AngularJS conventions</a>.</p>
+
+<p>When submitting a bugfix, write a test that exposes the bug and fails before applying your fix. Submit the test alongside the fix.</p>
+
+<p>When submitting a new feature, add tests that cover the feature.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><a href="http://opensource.org/licenses/bsd-license.php">BSD license</a></p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">generator-angular-closure maintained by <a href="https://github.com/m2nd">m2nd</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
